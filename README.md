@@ -1,1 +1,23 @@
 # taxonomy-enrichment
+Useful materials for participants of the Dialogue 2020 shared task on taxonomy enrichment
+
+#### Link to competion: [codalab](https://competitions.codalab.org/competitions/22168)
+
+#### Evaluation script:
+```
+usage: evaluate.py [-h] reference_file.tsv predicted_file.tsv
+
+positional arguments:
+  reference
+  predicted
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+#### Links to additional data:
+
+* [News corpus](http://bit.ly/38CLlmW)
+* [Hypernym database](http://panchenko.me/data/joint/isas/ru-librusec-wiki-diff.csv.gz)
+* [Parsed Russian Wikipedia](http://panchenko.me/data/joint/corpora/wikipedia-ru-2018.txt.gz)
+* [Additional text corpus](http://panchenko.me/data/russe/librusec_fb2.plain.gz)
