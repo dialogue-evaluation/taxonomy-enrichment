@@ -2,6 +2,7 @@
 Useful materials for participants of the Dialogue 2020 shared task on taxonomy enrichment
 
 #### Link to competion: [codalab](https://competitions.codalab.org/competitions/22168)
+#### Link to discussion group: [Telegram](https://t.me/joinchat/Ckja7Vh00qPOU887pLonqQ)
 
 #### Evaluation script:
 ```
