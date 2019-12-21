@@ -17,18 +17,20 @@ def read_dataset(data_path, sep='\t'):
     return vocab
 
 
-def get_score(true, predicted, k=10):
+def get_score(full, direct, predicted, k=10):
     ap_sum = 0
     rr_sum = 0
 
-    for neologism in true:
-        true_hypernyms = set(true.get(neologism, []))
+    for neologism in full:
+        full_hypernyms = set(full.get(neologism, []))
+        direct_hypernyms = set(direct.get(neologism, []))
         predicted_hypernyms = predicted.get(neologism, [])
 
-        ap_sum += compute_ap(true_hypernyms, predicted_hypernyms, k)
-        rr_sum += compute_rr(true_hypernyms, predicted_hypernyms, k)
+        ap_sum += max(compute_ap(full_hypernyms, predicted_hypernyms, k),
+                      compute_ap(direct_hypernyms, predicted_hypernyms, k))
+        rr_sum += compute_rr(full_hypernyms, predicted_hypernyms, k)
 
-    return ap_sum / len(true), rr_sum / len(true)
+    return ap_sum / len(full), rr_sum / len(full)
 
 
 def compute_ap(actual, predicted, k=10):
@@ -58,15 +60,17 @@ def compute_rr(true, predicted, k=10):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('reference')
+    parser.add_argument('full')
+    parser.add_argument('direct')
     parser.add_argument('predicted')
     args = parser.parse_args()
 
-    truth = read_dataset(args.reference)
+    full = read_dataset(args.full)
+    direct = read_dataset(args.direct)
     submitted = read_dataset(args.predicted)
-    if set(truth) != set(submitted):
+    if set(full) != set(submitted):
         print("Not all words are presented in your file")
-    mean_ap, mean_rr = get_score(truth, submitted)
+    mean_ap, mean_rr = get_score(full, direct, submitted)
     print("map: {0}\nmrr: {1}\n".format(mean_ap, mean_rr))
 
 
