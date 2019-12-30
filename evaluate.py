@@ -72,7 +72,7 @@ def main():
     submitted = read_dataset(args.predicted)
     if set(reference) != set(submitted):
         print(f"Not all words are presented in your file: {len(reference)} vs {len(submitted)}")
-    mean_ap, mean_rr = get_score(reference, submitted, k=15)
+    mean_ap, mean_rr = get_score(reference, submitted, k=10)
     print("map: {0}\nmrr: {1}\n".format(mean_ap, mean_rr))
 
 
