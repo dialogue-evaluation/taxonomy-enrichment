@@ -18,6 +18,7 @@ optional arguments:
 
 #### Links to additional data:
 
+* [ruWordNet dump](https://drive.google.com/file/d/1McTwDUlw2AoDl-0xHlyH6y-mIVXOcn1U/view)
 * [News corpus](http://bit.ly/38CLlmW)
 * [Hypernym database](http://panchenko.me/data/joint/isas/ru-librusec-wiki-diff.csv.gz)
 * [Parsed Russian Wikipedia](http://panchenko.me/data/joint/corpora/wikipedia-ru-2018.txt.gz)
