@@ -1,9 +1,9 @@
 # taxonomy-enrichment
 Useful materials for participants of the Dialogue 2020 shared task on taxonomy enrichment
 
-#### Link to baselines: [github](https://github.com/dialogue-evaluation/taxonomy-enrichment/tree/master/baselines)
+#### Baselines: [github](https://github.com/dialogue-evaluation/taxonomy-enrichment/tree/master/baselines)
 #### Link to competion: [codalab](https://competitions.codalab.org/competitions/22168)
-#### Link to discussion group: [Telegram](https://t.me/joinchat/Ckja7Vh00qPOU887pLonqQ)
+#### Discussion group: [Telegram](https://t.me/joinchat/Ckja7Vh00qPOU887pLonqQ)
 
 #### Evaluation script:
 ```
