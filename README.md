@@ -24,3 +24,11 @@ optional arguments:
 * [Hypernym database](http://panchenko.me/data/joint/isas/ru-librusec-wiki-diff.csv.gz)
 * [Parsed Russian Wikipedia](http://panchenko.me/data/joint/corpora/wikipedia-ru-2018.txt.gz)
 * [Additional text corpus](http://panchenko.me/data/russe/librusec_fb2.plain.gz)
+
+#### Important dates:
+* First Call for Participation: December 15, 2019.
+* Release of the Training Data: December 15, 2019.
+* Release of the Test Data: January 31, 2020.
+* Submission of the Results: February 14, 2020.
+* Results of the Shared Task: February 28, 2020.
+* Article submission deadlines: March 10, 2020
