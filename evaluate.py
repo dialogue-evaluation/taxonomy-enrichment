@@ -70,8 +70,10 @@ def main():
 
     reference = read_dataset(args.reference, lambda x: json.loads(x))
     submitted = read_dataset(args.predicted)
-    if set(reference) != set(submitted):
-        raise Exception(f"Not all words are presented in your file: {len(reference)} vs {len(submitted)}")
+    if len(set(reference).intersection(set(submitted))) == 0:
+        raise Exception("Reference and Submitted files have no samples in common")
+    elif set(reference) != set(submitted):
+        print("Not all words are presented in your file")
     mean_ap, mean_rr = get_score(reference, submitted, k=10)
     print("map: {0}\nmrr: {1}\n".format(mean_ap, mean_rr))
 
