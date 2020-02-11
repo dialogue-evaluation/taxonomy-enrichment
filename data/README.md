@@ -14,4 +14,4 @@ We provide the following data:
     - leaves
     - at least 5 hops from the nearest root
 - all_data_\[nouns|verbs\].tsv -- synsets_\[nouns|verbs\].tsv converted to the format "SENSE\<TAB\>PARENT SYNSETS" (format of the reference)
-- training_\[nouns|verbs\].tsv, dev_\[nouns|verbs\].tsv, test_\[nouns|verbs\].tsv -- partition of the training data in proportion 0.8/0.1/0.1
+- training_\[nouns|verbs\].tsv, dev_\[nouns|verbs\].tsv, test_\[nouns|verbs\].tsv -- partition of all_data_\[nouns|verbs\].tsv in proportion 0.8/0.1/0.1
