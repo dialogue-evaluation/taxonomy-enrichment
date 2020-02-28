@@ -30,6 +30,6 @@ optional arguments:
 * First Call for Participation: December 15, 2019.
 * Release of the Training Data: December 15, 2019.
 * Release of the Test Data: January 31, 2020.
-* Submission of the Results: ~~February 14, 2020~~ **February, 29: 00.00 (UTC+0)**
-* Results of the Shared Task: March 1, 2020.
+* Submission of the Results: ~~February 14, 2020~~ **March, 1 (Anywhere on Earth)**
+* Results of the Shared Task: March 3, 2020.
 * Article submission deadlines: March 10, 2020
