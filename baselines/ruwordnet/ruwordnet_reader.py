@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import os
 import codecs
 
-from database import DatabaseRuWordnet
+from ruwordnet.database import DatabaseRuWordnet
 
 
 def get_soup(file):

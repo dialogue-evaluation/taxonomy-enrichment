@@ -59,35 +59,30 @@ class FasttextVectorizer:
             w.write(f"{vectors.shape[0]} {vectors.shape[1]}\n")
             for word, vector in zip(words, vectors):
                 vector_line = " ".join(map(str, vector))
-                w.write(f"{word} {vector_line}\n")
+                w.write(f"{word.upper()} {vector_line}\n")
+
+
+def process_data(input_file, output_file):
+    with open(input_file, 'r', encoding='utf-8') as f:
+        dataset = f.read().lower().split("\n")[:-1]
+    ft_vec.vectorize_data(dataset, output_file)
 
 
 if __name__ == '__main__':
     ft_vec = FasttextVectorizer("models/cc.ru.300.bin")
-    ruwordnet = RuWordnet(db_path="../dataset/ruwordnet.db", ruwordnet_path=None)
+    ruwordnet = RuWordnet(db_path="../data/ruwordnet.db", ruwordnet_path=None)
     noun_synsets = defaultdict(list)
     verb_synsets = defaultdict(list)
     for sense_id, synset_id, text in ruwordnet.get_all_senses():
         if synset_id.endswith("N"):
-            noun_synsets[synset_id].append(text)
+            noun_synsets[synset_id].append(text.lower())
         elif synset_id.endswith("V"):
-            verb_synsets[synset_id].append(text)
+            verb_synsets[synset_id].append(text.lower())
 
-    ft_vec.vectorize_ruwordnet(noun_synsets, "models/vectors/nouns_ruwordnet_fasttext.txt")
-    ft_vec.vectorize_ruwordnet(verb_synsets, "models/vectors/verbs_ruwordnet_fasttext.txt")
+    ft_vec.vectorize_ruwordnet(noun_synsets, "models/vectors/ruwordnet_nouns.txt")
+    ft_vec.vectorize_ruwordnet(verb_synsets, "models/vectors/ruwordnet_verbs.txt")
 
-    with open("../dataset/public/verbs_public_no_labels.tsv", 'r', encoding='utf-8') as f:
-        dataset = f.read().split("\n")[:-1]
-    ft_vec.vectorize_data(dataset, "models/vectors/verbs_public_fasttext.txt")
-
-    with open("../dataset/public/nouns_public_no_labels.tsv", 'r', encoding='utf-8') as f:
-        dataset = f.read().split("\n")[:-1]
-    ft_vec.vectorize_data(dataset, "models/vectors/nouns_public_fasttext.txt")
-
-    with open("../dataset/private/verbs_private_no_labels.tsv", 'r', encoding='utf-8') as f:
-        dataset = f.read().split("\n")[:-1]
-    ft_vec.vectorize_data(dataset, "models/vectors/verbs_private_fasttext.txt")
-
-    with open("../dataset/private/nouns_private_no_labels.tsv", 'r', encoding='utf-8') as f:
-        dataset = f.read().split("\n")[:-1]
-    ft_vec.vectorize_data(dataset, "models/vectors/nouns_private_fasttext.txt")
+    process_data("../data/public_test/verbs_public.tsv", "models/vectors/verbs_public.txt")
+    process_data("../data/public_test/nouns_public.tsv", "models/vectors/nouns_public.txt")
+    process_data("../data/private_test/verbs_private.tsv", "models/vectors/verbs_private.txt")
+    process_data("../data/private_test/nouns_private.tsv", "models/vectors/nouns_private.txt")

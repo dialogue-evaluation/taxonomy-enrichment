@@ -30,7 +30,7 @@ class BaselineModel(Model):
         return [i[0] for i in self.w2v_ruwordnet.similar_by_vector(self.w2v_data[neologism], topn)]
 
 
-class SecondOrderModel(Model):
+class SecondOrderModel(Model):  # baseline for taxonomy-enrichment task
     def __init__(self, params):
         super().__init__(params)
 
