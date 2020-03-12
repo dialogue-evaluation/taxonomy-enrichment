@@ -33,7 +33,7 @@ Example with the required _json_ pairs in _config.json_ file:
   "output_path": "predictions/predicted_public_nouns_fasttext.tsv",
   "db_path": "../dataset/ruwordnet.db",
   "ruwordnet_path": null,
-  "model": "baseline"
+  "model": "second_order"
 }
 ```
 
