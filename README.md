@@ -21,7 +21,7 @@ optional arguments:
 #### Links to additional data:
 
 * [ruWordNet dump](https://drive.google.com/file/d/1McTwDUlw2AoDl-0xHlyH6y-mIVXOcn1U/view)
-* [News corpus](http://bit.ly/38CLlmW)
+* [News corpus](https://doi.org/10.5281/zenodo.3997150)
 * [Hypernym database](http://panchenko.me/data/joint/isas/ru-librusec-wiki-diff.csv.gz)
 * [Parsed Russian Wikipedia](http://panchenko.me/data/joint/corpora/wikipedia-ru-2018.txt.gz)
 * [Additional text corpus](http://panchenko.me/data/russe/librusec_fb2.plain.gz)
